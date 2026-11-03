@@ -11,9 +11,13 @@ Static recompilation of *The Legend of Zelda: Tears of the Kingdom* to native Wi
 
 ### 🏆 [Beta 2: Next Gen STS Unified Build (v0.3.4-beta-2-steeltemple)](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest) is NOW LIVE!
 
+<p align="center">
+  <img src="https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/download/v0.3.4-beta-2-steeltemple/totk_menu_beta2_nextgen_sts.png" alt="Next Gen STS DLSS NR Settings Menu" width="85%">
+</p>
+
 #### 📋 Summary of Key Upgrades & Changes:
-- **Depth-Guided Hybrid Motion Vectors & Live Visualizer**: Combines analytical camera reprojection for static terrain with depth-guided temporal disocclusion tracking for dynamic actors (Link running, swinging weapons, charging enemies, flying arrows). Completely eliminates temporal ghosting and provides full UltraCam parity! Includes an in-game Motion Vector Visualizer (`TOTK_MV_DEBUG=1` or menu switch).
-- **DLSS-NR Integration with Forced Preset B**: Full support for Streamline DLSS Neural Rendering (`sl.dlss_nr.dll`). Automatically forces **Preset B** (`NVSDK_NGX_DLSS_Hint_Render_Preset_B`), providing massive speedups and lower frame times compared to previous architectures with flawless reconstruction.
+- **Depth-Guided Hybrid Motion Vectors & Live Visualizer**: Combines analytical camera reprojection for static terrain with depth-guided temporal disocclusion tracking for dynamic actors (Link running, swinging weapons, charging enemies, flying arrows). Completely eliminates temporal ghosting! Includes an in-game Motion Vector Velocity Overlay (`TOTK_MV_DEBUG=1` or menu switch).
+- **OptiScaler-Style DLSS Neural Rendering with Forced Preset B**: Full support for Streamline DLSS Neural Rendering (`nvngx_dlssnr.dll` & `sl.dlss_nr.dll`). Automatically forces **Preset B** (`NVSDK_NGX_DLSS_Hint_Render_Preset_B`), providing massive speedups and lower frame times compared to previous architectures with flawless reconstruction. Includes OptiScaler-style WorkingScale, ColourStrength, TransferStrength, and live pipeline frame telemetry.
 - **Clean RTGI & Ray Reconstruction Removal**: Removed unpolished screen-space ray tracing and noisy denoisers, resulting in pristine image fidelity, zero temporal ghosting, and rock-solid framerates.
 - **Intel XeGTAO Ground Truth Ambient Occlusion**: Full integration of Intel XeGTAO for micro-shadowing depth and contact shadow realism with negligible GPU overhead, alongside SSAO and HBAO.
 - **Unified Upscaler Hub**: NVIDIA DLSS 4 / 4.5 Transformer presets (`K`, `J`, `M`, `L`), DLSS 3 CNN presets (`E`, `C`), DLAA, and AMD FSR 4.1.2 context-aware neural upscaling + FSR 1.0.
@@ -28,10 +32,3 @@ Static recompilation of *The Legend of Zelda: Tears of the Kingdom* to native Wi
 - 💾 **[Download Beta 2 Release](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest)** (Full Installer & Drop-in Packages)
 - 📖 **[DLSS & FSR DLL Installation Guide](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/tag/v0.3.4-beta-2-steeltemple)**
 - 🛠️ **[Main Project Repository](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild)**
-
----
-
-## 🔬 Current Development & Upcoming Features
-- ⚡ **DLSS 5 Neural Rendering (DLSS-NR)**: Streamline integration with real-time AI radiance caching and Preset B neural acceleration.
-- 🟦 **Intel Xe Suite**: Dynamic runtime support for Intel XeSS upscaling (`libxess.dll`), XeLL low latency, and XeFG frame generation.
-- 📊 Active continuous benchmarking and testing across diverse desktop and handheld configurations.
