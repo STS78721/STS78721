@@ -9,26 +9,33 @@ Welcome to my GitHub profile! I specialize in native static game recompilation, 
 
 Static recompilation of *The Legend of Zelda: Tears of the Kingdom* to native Windows and Linux x86-64 with an advanced Vulkan rendering architecture.
 
-### 🏆 [Beta 2: Next Gen STS Unified Build (v0.3.4-beta-2-steeltemple)](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest) is NOW LIVE!
+### 🏆 [Beta 3: Next Gen STS Unified Build (v0.3.4-beta-3-steeltemple)](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest) is NOW LIVE!
 
 <p align="center">
-  <img src="https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/download/v0.3.4-beta-2-steeltemple/totk_menu_beta2_nextgen_sts.png" alt="Next Gen STS DLSS NR Settings Menu" width="85%">
+  <img src="https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/download/v0.3.4-beta-3-steeltemple/totk_overlay_beta3_grouped_hud.png" alt="Next Gen STS Beta 3 Grouped HUD Overlay" width="95%">
 </p>
 
-#### 📋 Summary of Key Upgrades & Changes:
-- **Depth-Guided Hybrid Motion Vectors & Live Visualizer**: Combines analytical camera reprojection for static terrain with depth-guided temporal disocclusion tracking for dynamic actors (Link running, swinging weapons, charging enemies, flying arrows). Completely eliminates temporal ghosting! Includes an in-game Motion Vector Velocity Overlay (`TOTK_MV_DEBUG=1` or menu switch).
-- **OptiScaler-Style DLSS Neural Rendering with Forced Preset B**: Full support for Streamline DLSS Neural Rendering (`nvngx_dlssnr.dll` & `sl.dlss_nr.dll`). Automatically forces **Preset B** (`NVSDK_NGX_DLSS_Hint_Render_Preset_B`), providing massive speedups and lower frame times compared to previous architectures with flawless reconstruction. Includes OptiScaler-style WorkingScale, ColourStrength, TransferStrength, and live pipeline frame telemetry.
-- **Clean RTGI & Ray Reconstruction Removal**: Removed unpolished screen-space ray tracing and noisy denoisers, resulting in pristine image fidelity, zero temporal ghosting, and rock-solid framerates.
-- **Intel XeGTAO Ground Truth Ambient Occlusion**: Full integration of Intel XeGTAO for micro-shadowing depth and contact shadow realism with negligible GPU overhead, alongside SSAO and HBAO.
-- **Unified Upscaler Hub**: NVIDIA DLSS 4 / 4.5 Transformer presets (`K`, `J`, `M`, `L`), DLSS 3 CNN presets (`E`, `C`), DLAA, and AMD FSR 4.1.2 context-aware neural upscaling + FSR 1.0.
-- **Next-Gen Multi-Frame Generation**: NVIDIA DLSS Frame Gen with up to 4x/6x Multi-Frame Generation (RTX 50-series gated), plus AMD FSR 3.1 & FSR 4 AI Frame Gen across modern Radeon GPUs (RX 9070 XT, RX 7900 XTX).
-- **Ultra-Low Latency Pipeline**: Full native NVIDIA Reflex (`VK_NV_low_latency2`) and AMD Anti-Lag 2 (`VK_AMD_anti_lag`) frame pacing.
-- **In-Game Settings Overhaul**: In-game menu (F1) rebranded as `Next Gen STS Build`, featuring dedicated **Graphics Settings** and **DLSS NR** tabs.
-- **OLED HDR10 Calibration**: Dynamic peak brightness, exposure, and HUD white point tuning (`Vivid`, `Clarity`, `Custom`).
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ ● 526 FPS  1% 41  0.1% 39  1.9 ms                                                      │
+│ DLSS 4.5 · Preset M  [DLSS FG 6x]  [NR ACTIVE · Preset B]  | 1080p -> 4K | Reflex      │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 📋 Summary of Key Upgrades in Beta 3:
+- **Full Intel Stack Integration (XeSS 2.0+, XeFG, XeLL)**: Full support for Intel XeSS 2.0+ with hardware **XMX Matrix Acceleration** on Intel Arc and universal **DP4a** fallback across all GPUs. Hardware-aware **Intel XeFG** multi-frame generation (`2x`, `3x`, `4x`) and **Intel XeLL** driver frame pacing. Official Intel DLLs (`libxess.dll`, `libxess_fg.dll`, `libxell.dll`, `libxess_dx11.dll`) bundled and supported via resilient multi-path dynamic loading.
+- **DLSS Neural Reconstruction (DLSS-NR) Hardware Gating & Uncoupling**: DLSS-NR is now completely uncoupled from DLSS/FG models and presets (`TOTK_DLSS_PRESET` and `TOTK_DLSS_NR_PRESET` operate independently). Non-NVIDIA GPUs or missing DLLs are automatically grayed out in the menu with clear explanatory badges. Leverages fast Preset B (`NVSDK_NGX_DLSS_Hint_Render_Preset_B`).
+- **Refined Zero-Duplication HUD Performance Overlay**: Clean grouped technological pipeline (`DLSS 4.5 · Preset M` &rarr; `[DLSS FG 6x]` &rarr; `[NR ACTIVE · Preset B]` &rarr; `| 1080p -> 4K | Hybrid MV | Reflex`), dedicated frame pacing line (`● FPS 1% Low 0.1% Low ms`), zero redundant text.
+- **0.1% and 1% Low Frametime Metrics**: Added real-time micro-stutter and frame pacing hitch detection to both compact overlay and full HUD table.
+- **Strict Dynamic DLSS vs DLAA Separation**: Real-time resolution evaluation accurately selects between `DLSS 4.5` (active upscaling) and `DLAA 4.5` (native 100% anti-aliasing).
+- **Depth-Guided Hybrid Motion Vectors & Live Visualizer**: Analytical camera reprojection combined with depth-guided temporal disocclusion tracking for dynamic actors, completely eliminating ghosting on Link, weapons, enemies, and arrows.
+- **Intel XeGTAO Ground Truth Ambient Occlusion**: Full integration of Intel XeGTAO micro-shadowing depth and contact shadow realism alongside 24-step directional HBAO and SSAO.
+- **Industry-Standard Graphics Settings Terminology**: Intuitive options and clear descriptions designed for the everyday gamer.
+- **PS5 DualSense Controller Architectural Blueprint**: Complete architecture published for dynamic adaptive triggers (bow draw resistance and string snap release), 4-channel controller audio routing for archery sound effects, and dynamic in-game button prompt detection.
 
 ---
 
 ## 📥 Quick Links & Resources
-- 💾 **[Download Beta 2 Release](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest)** (Full Installer & Drop-in Packages)
-- 📖 **[DLSS & FSR DLL Installation Guide](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/tag/v0.3.4-beta-2-steeltemple)**
+- 💾 **[Download Beta 3 Release (Latest)](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/latest)** (Full Installer & Drop-in Packages)
+- 📖 **[Beta 3 Release Notes & SHA-256 Hashes](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild/releases/tag/v0.3.4-beta-3-steeltemple)**
 - 🛠️ **[Main Project Repository](https://github.com/STS78721/totk-pc-recomp-SteelTempleBuild)**
